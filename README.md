@@ -1,54 +1,88 @@
-# Live Caption Translation Chrome Extension
+# Live Caption Translation
 
-A Chrome extension that provides real-time caption translation for YouTube live streams. This MVP version simulates the translation process for testing purposes.
+A Chrome extension that provides real-time caption translation for live streams. Currently in development, this extension aims to capture audio from live streams, transcribe it, and provide translations in the user's preferred language.
 
-## Features
+## Current Status
 
-- Real-time caption overlay for YouTube live streams
-- Simulated Japanese translations with [Translated] tag
-- Simple popup interface for controlling captions
-- Clean, unobtrusive caption display
+The extension is currently in the development phase, working on implementing audio capture functionality. The current implementation includes:
 
-## Installation
+- Basic extension structure with popup interface
+- Audio capture setup using Chrome's tabCapture API
+- Caption display system
+- Integration with LibreTranslate for translations
 
-1. Clone this repository or download the source code
-2. Open Chrome and navigate to `chrome://extensions/`
-3. Enable "Developer mode" in the top right corner
-4. Click "Load unpacked" and select the extension directory
+## Features (Planned)
 
-## Usage
+- Real-time audio capture from live streams
+- Speech-to-text transcription
+- Translation to multiple languages
+- Customizable caption display
+- Support for various live streaming platforms (starting with YouTube)
+- Language selection interface
+- Caption styling options
 
-1. Navigate to any YouTube live stream
-2. Click the extension icon in your Chrome toolbar
-3. Click "Start Captions" to begin the simulated translation
-4. The captions will appear at the bottom of the video
-5. Click "Stop Captions" to disable the translation
+## Technical Challenges
 
-## Project Structure
+The project is currently working on overcoming several technical challenges:
 
-- `manifest.json`: Extension configuration and permissions
-- `background.js`: Background service worker for caption simulation
-- `content.js`: Content script for injecting and managing the caption overlay
-- `popup.html` & `popup.js`: Extension popup interface
-- `styles.css`: Styling for the caption overlay
+1. Audio Capture
+   - Implementing reliable tab audio capture
+   - Processing audio streams in real-time
 
-## Future Enhancements
+2. Speech Recognition
+   - Converting captured audio to text
+   - Handling multiple languages and accents
 
-- Integration with real speech-to-text APIs
-- Support for multiple languages
-- Customizable caption styles and positions
-- Error handling and recovery mechanisms
-- User preferences for language selection
+3. Translation
+   - Real-time translation of transcribed text
+   - Maintaining translation quality and speed
 
 ## Development
 
-This is an MVP version that simulates the translation process. The next steps will involve:
+### Prerequisites
 
-1. Integrating actual speech-to-text services
-2. Adding real translation capabilities
-3. Implementing user configuration options
-4. Adding error handling and recovery mechanisms
+- Chrome browser
+- Basic understanding of Chrome extension development
+
+### Installation
+
+1. Clone the repository
+2. Open Chrome and navigate to `chrome://extensions/`
+3. Enable "Developer mode"
+4. Click "Load unpacked" and select the extension directory
+
+### Project Structure
+
+```
+├── manifest.json      # Extension configuration
+├── popup.html        # Extension popup interface
+├── popup.js          # Popup functionality
+├── background.js     # Background service worker
+├── content.js        # Content script for page interaction
+├── styles.css        # Styling for captions and popup
+└── icons/           # Extension icons
+```
+
+## Future Goals
+
+- Support for multiple streaming platforms
+- Enhanced translation quality
+- Customizable caption styles
+- Offline translation capabilities
+- Performance optimizations
+- User settings persistence
+- Multiple language support for both transcription and translation
 
 ## Contributing
 
-Feel free to submit issues and enhancement requests! 
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- LibreTranslate for translation services
+- Chrome Extension documentation
+- Web Speech API documentation 
